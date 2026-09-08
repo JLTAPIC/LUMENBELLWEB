@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luminbell | Cuidado masculino premium. Eleva tu ritual diario con nuestros productos de ingredientes naturales y de alta calidad para cabello, barba y rostro.">
+    <title>Luminbell | Cuidado Masculino Premium</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <span>Únete al club y recibe 10% de descuento en tu primer pedido | Envío gratis en compras superiores a 50€</span>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="logo">
+                <a href="#">LUMINBELL</a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="nav-bar" id="navBar">
+                <button class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Cerrar menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active" data-filter="todos">Tienda</a></li>
+                    <li><a href="#productos" class="nav-link" data-filter="cabello">Cuidado Capilar</a></li>
+                    <li><a href="#productos" class="nav-link" data-filter="barba">Cuidado de Barba</a></li>
+                    <li><a href="#productos" class="nav-link" data-filter="facial">Cuidado Facial</a></li>
+                    <li><a href="#" id="openHistoryBtn" class="nav-link">Nuestra Historia</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search & Actions -->
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Buscar ritual..." aria-label="Buscar productos">
+                    <button class="search-btn" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <button class="action-btn" id="profileBtn" aria-label="Perfil de usuario">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+
+                <button class="action-btn cart-toggle-btn" id="cartToggleBtn" aria-label="Ver carrito de compras">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg" style="background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.9)), url('assets/hero_banner.jpg');"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Eleva tu ritual diario</h1>
+            <p class="hero-subtitle">Productos de cuidado masculino de alta gama, formulados con ingredientes premium y naturales para el hombre contemporáneo.</p>
+            <a href="#productos" class="cta-btn primary-cta">
+                <span>Explorar Colección</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Deslizar para explorar</span>
+            <div class="scroll-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+    </section>
+
+    <!-- Brand Value Proposition -->
+    <section class="value-prop-section">
+        <div class="value-prop-container">
+            <div class="value-prop-card">
+                <div class="value-prop-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <h3>Ingredientes Premium</h3>
+                <p>Seleccionamos cuidadosamente aceites esenciales, extractos botánicos y nutrientes activos orgánicos.</p>
+            </div>
+            <div class="value-prop-card">
+                <div class="value-prop-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <h3>Cruelty Free & Natural</h3>
+                <p>Fórmulas 100% veganas, libres de crueldad animal, parabenos, siliconas y sulfatos agresivos.</p>
+            </div>
+            <div class="value-prop-card">
+                <div class="value-prop-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3>Envío Rápido y Seguro</h3>
+                <p>Entrega en 24/48 horas con embalaje premium eco-sostenible y seguimiento detallado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories Grid -->
+    <section class="categories-section" id="categorias">
+        <div class="section-header">
+            <span class="section-tag">Colección Exclusiva</span>
+            <h2 class="section-title">Líneas de Cuidado</h2>
+        </div>
+        
+        <div class="categories-grid">
+            <div class="category-card" data-category="cabello">
+                <div class="category-img" style="background-image: url('assets/cera_cabello.jpg');"></div>
+                <div class="category-overlay"></div>
+                <div class="category-info">
+                    <h3>Ceras y Pomadas</h3>
+                    <p>Fijación impecable y texturas elegantes con acabados mate o brillo natural.</p>
+                    <a href="#productos" class="category-link" data-filter="cabello">Ver productos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="category-card" data-category="barba">
+                <div class="category-img" style="background-image: url('assets/aceite_barba.jpg');"></div>
+                <div class="category-overlay"></div>
+                <div class="category-info">
+                    <h3>Aceites y Bálsamos</h3>
+                    <p>Nutrición profunda, suavidad extrema y brillo varonil para tu barba.</p>
+                    <a href="#productos" class="category-link" data-filter="barba">Ver productos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="category-card" data-category="shampoo">
+                <div class="category-img" style="background-image: url('assets/shampoo.jpg');"></div>
+                <div class="category-overlay"></div>
+                <div class="category-info">
+                    <h3>Champús y Acondicionadores</h3>
+                    <p>Limpieza vigorizante y fortalecimiento folicular desde la raíz.</p>
+                    <a href="#productos" class="category-link" data-filter="shampoo">Ver productos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="category-card" data-category="facial">
+                <div class="category-img" style="background-image: url('assets/crema_facial.jpg');"></div>
+                <div class="category-overlay"></div>
+                <div class="category-info">
+                    <h3>Cremas Faciales</h3>
+                    <p>Hidratación ligera y protección antioxidante para un rostro revitalizado.</p>
+                    <a href="#productos" class="category-link" data-filter="facial">Ver productos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers / Product Showcase Section -->
+    <section class="products-section" id="productos">
+        <div class="section-header">
+            <span class="section-tag">Los Más Vendidos</span>
+            <h2 class="section-title">Nuestra Gama de Productos</h2>
+            
+            <!-- Category Filters Tabs -->
+            <div class="product-filters">
+                <button class="filter-tab active" data-filter="todos">Todos</button>
+                <button class="filter-tab" data-filter="cabello">Cabello</button>
+                <button class="filter-tab" data-filter="barba">Barba</button>
+                <button class="filter-tab" data-filter="facial">Cuidado Facial</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products are generated dynamically via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Testimonials / Customer Reviews Carousel -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <span class="section-tag">Testimonios Reales</span>
+            <h2 class="section-title">La Experiencia Luminbell</h2>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonials-carousel" id="testimonialsCarousel">
+                <!-- Testimonial slides will be populated by JS -->
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="carousel-control-btn prev-btn" id="prevTestimonial" aria-label="Testimonio anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Dots will be populated by JS -->
+                </div>
+                <button class="carousel-control-btn next-btn" id="nextTestimonial" aria-label="Siguiente testimonio">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Únete al Club Luminbell</h2>
+                <p>Recibe un 10% de descuento en tu primera compra y accede de forma exclusiva a lanzamientos de productos, rituales de cuidado y consejos profesionales.</p>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" id="newsletterEmail" placeholder="Tu dirección de correo electrónico" required aria-label="Correo para newsletter">
+                        <button type="submit" class="newsletter-submit-btn">Suscribirse</button>
+                    </div>
+                </form>
+                <div class="newsletter-msg" id="newsletterMsg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2 class="footer-logo">LUMINBELL</h2>
+                <p class="footer-desc">Redefiniendo el cuidado personal masculino con fórmulas de lujo, ingredientes orgánicos y elegancia atemporal.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <h3>Colecciones</h3>
+                <ul>
+                    <li><a href="#productos" class="footer-filter-link" data-filter="cabello">Estilo de Cabello</a></li>
+                    <li><a href="#productos" class="footer-filter-link" data-filter="barba">Ritual de Barba</a></li>
+                    <li><a href="#productos" class="footer-filter-link" data-filter="facial">Cuidado del Rostro</a></li>
+                    <li><a href="#productos" class="footer-filter-link" data-filter="todos">Todos los Productos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <h3>Soporte y Ayuda</h3>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
+                    <li><a href="#">Seguimiento de Pedido</a></li>
+                    <li><a href="#">Contacto de Soporte</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <h3>Contacto</h3>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> Calle Serrano 45, Madrid, España</li>
+                    <li><i class="fa-solid fa-phone"></i> +34 910 123 456</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@luminbell.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Luminbell. Todos los derechos reservados.</p>
+            <div class="payment-methods">
+                <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer Slider -->
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Tu Ritual de Compra (<span id="cartCountHeader">0</span>)</h3>
+            <button class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Cart items populated by JS -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal:</span>
+                <span class="cart-subtotal" id="cartSubtotal">0.00€</span>
+            </div>
+            <p class="shipping-info-text">Envío calculado en el checkout. Envío gratis si supera los 50€.</p>
+            <button class="checkout-btn" id="cartCheckoutBtn">Completar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" id="closeProductModal" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+            <div class="product-modal-grid" id="productModalDetails">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuestra Historia Modal -->
+    <div class="modal-overlay" id="historyModal">
+        <div class="modal-content history-modal-content">
+            <button class="modal-close" id="closeHistoryModal" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+            <div class="history-content-container">
+                <div class="history-img" style="background-image: url('assets/hero_banner.jpg');"></div>
+                <div class="history-text">
+                    <h2>Nuestra Historia</h2>
+                    <span class="gold-subtitle">El Origen del Ritual Masculino</span>
+                    <p>Luminbell nació de la convicción de que el cuidado personal masculino no debería ser una rutina apresurada, sino un ritual diario de distinción, confianza y bienestar.</p>
+                    <p>Fundada en Madrid, nos asociamos con químicos especializados y barberos galardonados para crear una gama de productos que combinan aceites puros prensados en frío, extractos botánicos de alta calidad y la ciencia cosmética más avanzada.</p>
+                    <p>El nombre <strong>Luminbell</strong> evoca la luz interna y la fuerza atemporal de un hombre refinado. Cada fragancia amaderada, cada textura sedosa y cada envase de vidrio ámbar mate está pensado para ofrecer una experiencia multisensorial sublime.</p>
+                    <div class="history-signature">
+                        <p>Elevando rituales,</p>
+                        <strong>El Equipo Luminbell</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content checkout-modal-content">
+            <button class="modal-close" id="closeCheckoutModal" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-grid">
+                <!-- Form Formulario -->
+                <div class="checkout-form-side">
+                    <h2>Información de Pago</h2>
+                    <form id="checkoutForm">
+                        <div class="form-row">
+                            <div class="form-group-half">
+                                <label for="checkoutNombre">Nombre</label>
+                                <input type="text" id="checkoutNombre" required>
+                            </div>
+                            <div class="form-group-half">
+                                <label for="checkoutApellidos">Apellidos</label>
+                                <input type="text" id="checkoutApellidos" required>
+                            </div>
+                        </div>
+                        <div class="form-group-full">
+                            <label for="checkoutEmail">Email</label>
+                            <input type="email" id="checkoutEmail" required>
+                        </div>
+                        <div class="form-group-full">
+                            <label for="checkoutDireccion">Dirección de Entrega</label>
+                            <input type="text" id="checkoutDireccion" required placeholder="Calle, número, piso...">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group-half">
+                                <label for="checkoutCiudad">Ciudad</label>
+                                <input type="text" id="checkoutCiudad" required>
+                            </div>
+                            <div class="form-group-half">
+                                <label for="checkoutCP">Código Postal</label>
+                                <input type="text" id="checkoutCP" required>
+                            </div>
+                        </div>
+                        <div class="payment-methods-select">
+                            <label>Método de Pago</label>
+                            <div class="payment-options">
+                                <label class="payment-option-card active">
+                                    <input type="radio" name="paymentType" value="tarjeta" checked>
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    <span>Tarjeta</span>
+                                </label>
+                                <label class="payment-option-card">
+                                    <input type="radio" name="paymentType" value="paypal">
+                                    <i class="fa-brands fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </label>
+                                <label class="payment-option-card">
+                                    <input type="radio" name="paymentType" value="bizum">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                    <span>Bizum</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-order-btn" id="submitOrderBtn">Confirmar y Pagar</button>
+                    </form>
+                </div>
+                
+                <!-- Resumen de Pedido -->
+                <div class="checkout-summary-side">
+                    <h2>Resumen de tu Orden</h2>
+                    <div class="checkout-summary-items" id="checkoutSummaryItems">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="checkout-pricing">
+                        <div class="price-row">
+                            <span>Subtotal</span>
+                            <span id="checkoutSubtotal">0.00€</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Envío</span>
+                            <span id="checkoutShipping">Gratis</span>
+                        </div>
+                        <hr>
+                        <div class="price-row total-row">
+                            <span>Total</span>
+                            <span id="checkoutTotal">0.00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification System -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
